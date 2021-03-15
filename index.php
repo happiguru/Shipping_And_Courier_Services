@@ -12,8 +12,10 @@
     <title>Golf Courrier and Shipment</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+  <?php
+    include_once("assets/header.php");
 
+    ?>
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="js/main.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
