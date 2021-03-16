@@ -26,8 +26,4 @@
     <div>
        <h2>Our Partners</h2>
     </div>
-    <div class="">
-
-        <h3>Our Location</h3>
-    </div>
 </div>
