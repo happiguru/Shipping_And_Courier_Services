@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar { background-color: #484848; }
+  .navbar .navbar-nav .nav-link { color: #fff; }
+  .navbar .navbar-nav .nav-link:hover { color: #fbc531; }
+  .navbar .navbar-nav .active > .nav-link { color: #fbc531; }
+
+  .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .carousel-caption {
+    bottom: 270px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+  
+  .carousel-caption p {
+    width: 75%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+  
+  footer a.text-light:hover { color: #fed136!important; text-decoration: none; }
+  footer .cizgi { border-right: 1px solid #535e67; }
+
+
+  /* #region Tablet version (Tablet: up to 768px) */
+
+@media screen and (min-width: 768px) {
+
+}
+
+/* #endregion */
+
+/* #region Desktop version (Desktop: up to 1024px) */
+
+@media screen and (max-width: 1023px) {
+  footer .cizgi { border-right: none; }
+}
+/* #endregion */
+
+/* #region TV and extra large screen version (TV or Extra Large: from 1024px) */
+
+@media screen and (min-width: 1024px) {
+
+}
+
+/* #endregion */
