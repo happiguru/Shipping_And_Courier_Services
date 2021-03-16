@@ -1,4 +1,4 @@
-# shipping_courier_services
+# Shipping and Courrier Service Application
 Shipping and Courier Service Website Built with PHP | HTML5 | JavaScript and Bootstrap
 
 ## Built With
