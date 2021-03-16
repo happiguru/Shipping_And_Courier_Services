@@ -9,6 +9,10 @@
   .navbar .navbar-nav .nav-link:hover { color: #fbc531; }
   .navbar .navbar-nav .active > .nav-link { color: #fbc531; }
 
+  .carousel-tips {
+    color: orange;
+  }
+
   .carousel-item {
     height: 100vh;
     min-height: 300px;
@@ -27,6 +31,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 25px;
+    color: rgb(0, 0, 128);
   }
   
   .carousel-caption p {

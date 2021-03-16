@@ -11,28 +11,28 @@
       <img class="d-block w-100" src="https://gpflogistic.com/wp-content/uploads/2020/04/theme_image_23.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <h5>Fully Sustainable Cargo Solutions</h5>
-        <p>Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
+        <p class="carousel-tips">Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://gpflogistic.com/wp-content/uploads/2020/04/theme_image_16.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block">
         <h5>Air Freight That Saves Your Time</h5>
-        <p>Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
+        <p class="carousel-tips">Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://gpflogistic.com/wp-content/uploads/2020/04/theme_image_24.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
         <h5>Innovative Sea Transportation</h5>
-        <p>Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
+        <p class="carousel-tips">Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://demo.farost.net/equita/wp-content/uploads/2020/04/theme_image_13.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block">
         <h5>Your Flexible Roads Directions!</h5>
-        <p>Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
+        <p class="carousel-tips">Representative logistics operator providing full range of service in the sphere of customs clearance and transportation worldwide.</p>
       </div>
     </div>
   </div>
