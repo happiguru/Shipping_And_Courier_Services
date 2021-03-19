@@ -1,5 +1,5 @@
 <!--- Footer --->
-<div class="container-fluid mt-3">
+<div class="container my-3">
 	<div class="map-responsive">
 		<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
@@ -12,9 +12,12 @@
 						<div class="card bg-secondary border-0">
 							<div class="card-body text-light text-center">
 								<h5 class="card-title text-white display-4" style="font-size:30px">NEXTGEN Logistics</h5>
-							<p class="d-inline lead">Tüm Hakları Saklıdır © 2018<br>
-							<a href="#" class="text-light d-block lead">Blog</a>
-							</p>
+								<p class="d-inline lead">Green Pacific is a representative logistics
+									operator providing full range of service
+									in the sphere of customs cargo and
+									transportation worldwide.</p><br />
+								<p class="d-inline lead">NEXTGEN Logistics © 2021<br>
+								</p>
 	
 							</div>
 						</div>
@@ -24,8 +27,8 @@
 						<div class="card bg-secondary border-0">
 							<div class="card-body text-center">
 								<h5 class="card-title text-white display-4" style="font-size:30px">Contact Us</h5>
-								<a class="text-light d-block lead" style="margin-left: -20px" href="#"><i class="fa fa-phone mr-2"></i>+90 (000) 000 0 000</a>
-								<a class="text-light d-block lead" href="#"><i class="fa fa-envelope mr-2"></i>admin@localhost.com</a>
+								<a class="text-light d-block lead" style="margin-left: -20px" href="#"><i class="fa fa-phone mr-2"></i>+1 (661) 769-6-179</a>
+								<a class="text-light d-block lead" href="#"><i class="fa fa-envelope mr-2"></i>customerservice@nextgen.com</a>
 							</div>
 						</div>
 					</div>
@@ -34,15 +37,11 @@
 						<div class="card bg-secondary border-0">
 							<div class="card-body text-center">
 							<h5 class="card-title text-white display-4" style="font-size:30px">Social Media</h5>
-					
-									<a class="text-light" href="#"><i class="fa fa-facebook-square fa-fw fa-2x"></i></a>
+									<a class="text-light" href="https://www.facebook.com/Green-Pacific-Logistic-114714343607800"><i class="fa fa-facebook-square fa-fw fa-2x"></i></a>
 								
-									<a class="text-light" href="#"><i class="fa fa-twitter-square fa-fw fa-2x"></i></a>
+									<a class="text-light" href="https://twitter.com/LewisTh88174001"><i class="fa fa-twitter-square fa-fw fa-2x"></i></a>
 								
-									<a class="text-light" href="#"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
-								
-									<a class="text-light" href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
-								
+									<a class="text-light" href="https://www.instagram.com/greenpacificlog/"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
 							</div>
 						</div>
 					</div>	
