@@ -15,8 +15,12 @@
     <title>Golf Courrier and Shipment</title>
   </head>
   <body>
+      <?php
+        include_once('../views/header.php');
+      ?>
+      <div class="container">
+            <h2>welcome Admin</h2>
+      </div>
 <?php
-    require('header.php');
-    include_once("views/map.php");
-    require_once('footer.php');
+    include_once('../views/footer.php');
 ?>

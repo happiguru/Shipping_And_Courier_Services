@@ -62,5 +62,6 @@
   </div>
 </div>
 <?php
+    include_once("views/map.php");
     include_once("views/footer.php");
 ?>

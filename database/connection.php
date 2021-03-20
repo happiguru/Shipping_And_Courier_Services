@@ -1,7 +1,7 @@
 <?php
 // Database Connection Details
 $hostname_login = "localhost";
-$database_login = "flight";
+$database_login = "nextgen";
 $username_login = "root";
 $password_login = "";
 
