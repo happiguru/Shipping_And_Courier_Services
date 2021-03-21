@@ -32,18 +32,25 @@
         exit();
     }
 
-    $query = "SELECT * FROM admin WHERE username ='$username' AND together1='$password'";
+    $query = "SELECT * FROM admin WHERE username ='$username' AND passw ='$password'";
     $result = mysqli_query($db_login, $query);
 
     if(mysqli_num_rows($result) == 1) {
-        session_regenerate_id();
-        $user = mysqli_fetch_assoc($result);
-        $_SESSION['USER_ADMIN_ID'] = $user['username'];
 
-        session_write_close();
+        while($row = mysqli_fetch_array($result)) {
+            $id = $row['adminid'];
+            $uname = $row['username'];
+        }
+        // session_regenerate_id();
+        //$user = mysqli_fetch_assoc($result);
+        $_SESSION['userId'] = $id;
+        $_SESSION['username'] = $uname;
+    }
+
+    if(isset($_SESSION["username"])){
         header("location: dashboard.php");
-        exit();
-    } else {
+    } 
+    else {
         $php_errormsg[] = 'Provide a valid username and password';
         $errflag = true;
 

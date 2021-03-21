@@ -27,15 +27,7 @@
                 include_once('./admin-sidebar.php')
               ?>
               <div class="col-12 col-md-9">
-                <h3>Admin Dashboard</h3>
-                <p>
-                <?php
-                    if($_SESSION['username']){
-                    }
-                ?>
-                Welcome <?php echo $_SESSION['username']; ?>. Click here to <a href="logout.php" title="logout">
-                Logout<?php}else echo "<h1>Please login first .</h1>";?>
-                </p>
+                <h3>Add New Tracked Parcel</h3>
               </div>
           </div>
       </div>

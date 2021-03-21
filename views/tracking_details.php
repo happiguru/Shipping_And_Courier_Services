@@ -6,7 +6,6 @@ if($_SESSION['USER_NUM'] == "") {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,10 +26,8 @@ if($_SESSION['USER_NUM'] == "") {
 <?php
   require('header.php');
 ?>
-
 <?php
     $num = $_SESSION['USER_NUM'];
-
     require_once('../database/config.php');
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
     $query = "SELECT * FROM tracking WHERE num = '$num'";
@@ -113,7 +110,6 @@ if($_SESSION['USER_NUM'] == "") {
   </div>
   </div>
 </div>
-
 <?php
   include_once("../views/map.php");
   require_once('footer.php')

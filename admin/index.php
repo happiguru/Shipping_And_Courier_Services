@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    unset($_SESSION['USER_ADMIN_ID']);
+    //session_start();
+    //unset($_SESSION['USER_ADMIN_ID']);
 ?>
 
 <!DOCTYPE html>
