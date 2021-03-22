@@ -108,6 +108,10 @@
     background: #fff;
   }
 
+  section {
+    position: relative;
+  }
+
   .section-padding {
     padding: 50px 0;
   }
@@ -134,6 +138,15 @@
     position: relative;
     padding-left: 18px;
     margin-bottom: 20px;
+  }
+
+  .featured-service-wrap .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .featured-service-content {
+    background: #fff;
+    padding: 40px 30px;
   }
 
 strong { font-weight: 500; }
