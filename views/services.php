@@ -30,6 +30,53 @@
       </ol>
     </div>
 </section>
+<section class="service-intro-wrap section-padding">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="service-intro-thumb text-center">
+										<img src="img/service-thumb.jpg" alt="service">
+									</div>
+								</div><!--/.col-->
+								<div class="col-sm-6">
+
+									<div class="service-intro-content">
+										<div class="section-heading">
+											<h2 class="section-title">Moving and storage services</h2>
+										</div>
+										<span class="mark">Competently restore adaptive quality vectors with bricks-and-clicks results. Enthusiastically embrace interoperable vortals whereas alternative technologies.</span>
+										<p>Proactively productize principle-centered processes after business portals. Enthusiastically target distributed e-markets whereas 24/365 innovation. Completely mesh prospective strategic theme areas before high standards in materials. Phosfluorescently repurpose high-payoff metrics vis-a-vis tactical portals. Globally customize viral processes for state of the art mindshare.</p>
+									
+
+										<div class="row">
+											<div class="col-sm-6">
+												<ul>
+													<li>Completely productize next generation</li>
+													<li>Mind share without timely experiences</li>
+													<li>Completely pontificate</li>
+													<li>Resource levelling</li>
+													<li>Highly potentialities</li>
+												</ul>
+											</div><!-- /.col -->
+
+											<div class="col-sm-6">
+												<ul>
+													<li>Completely productize next generation</li>
+													<li>Mind share without timely experiences</li>
+													<li>Completely pontificate</li>
+													<li>Resource levelling</li>
+													<li>Highly potentialities</li>
+												</ul>
+											</div><!-- /.col -->
+
+										</div><!--/.row-->
+									</div><!--/.service-intro-content-->
+
+								</div><!--/.col-->
+							</div><!--/.row -->
+						</div><!--/.container-->
+
+					</section>
 
 <?php
     include_once("map.php");
