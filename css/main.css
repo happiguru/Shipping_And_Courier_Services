@@ -92,6 +92,13 @@
     text-align: center;
   }
 
+  .service-intro-wrap {
+    background: #fff;
+  }
+
+  .section-padding {
+    padding: 150px 0;
+  }
 
 
 strong { font-weight: 500; }
