@@ -29,6 +29,9 @@
       </ol>
     </div>
 </section>
+<?php
+    include_once("map.php");
+?>
 <section class="contact-wrap section-padding">
 						<div class="container">
 							<div class="row">
@@ -177,19 +180,19 @@
 								<h2>Send us your feedback</h2>
 								<form id="contactForm" action="sendemail.php" method="POST">
 								  	<div class="row">
-								  	  	<div class="col-sm-4 col-xs-12">
+								  	  	<div class="col-sm-4 col-12">
 										  <div class="form-group">
 										    <label for="name">Name*</label>
 										    <input id="name" name="name" type="text" class="form-control" required="" placeholder="">
 										  </div>
 									 	</div><!-- /.col -->
-									 	<div class="col-sm-4 col-xs-12">
+									 	<div class="col-sm-4 col-12">
 										  <div class="form-group">
 										    <label for="email">E-mail*</label>
 										    <input id="email" name="email" type="email" class="form-control" required="" placeholder="">
 										  </div>
 										</div><!-- /.col -->
-										<div class="col-sm-4 col-xs-12">
+										<div class="col-sm-4 col-12">
 										  <div class="form-group">
 										    <label for="url">Website</label>
 										    <input id="url" name="url" type="text" class="form-control" placeholder="">
@@ -197,19 +200,19 @@
 										</div><!-- /.col -->
 								  	</div><!-- /.row -->
 								  	<div class="row">
-								  	  	<div class="col-sm-4 col-xs-12">
+								  	  	<div class="col-sm-4 col-12">
 										  <div class="form-group">
 										    <label for="organization">Organization</label>
 										    <input id="organization" name="organization" type="text" class="form-control" placeholder="">
 										  </div>
 									 	</div><!-- /.col -->
-									 	<div class="col-sm-4 col-xs-12">
+									 	<div class="col-sm-4 col-12">
 										  <div class="form-group">
 										    <label for="position">Position</label>
 										    <input id="position" name="position" type="text" class="form-control" placeholder="">
 										  </div>
 										</div><!-- /.col -->
-										<div class="col-sm-4 col-xs-12">
+										<div class="col-sm-4 col-12">
 										  <div class="form-group">
 										    <label for="country">Country</label>
 										    <input id="country" name="country" type="text" class="form-control" placeholder="">
@@ -217,11 +220,11 @@
 										</div><!-- /.col -->
 								  	</div><!-- /.row -->
 								  	<div class="row">
-										<div class="col-xs-12">
-											<div class="form-group">
-											    <label>Message</label>
-											    <textarea id="message" name="message" class="form-control" rows="6" required="" placeholder=""></textarea>
-											</div>
+                      <div class="col-12">
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="6" required="" placeholder=""></textarea>
+                        </div>
 										</div><!-- /.col -->
 								  	</div><!-- /.row -->
 
@@ -233,6 +236,5 @@
 						</div><!-- /.container -->
 					</section>
 <?php
-    include_once("map.php");
     require_once('footer.php')
 ?>

@@ -149,6 +149,25 @@
     padding: 40px 30px;
   }
 
+  .form-group {
+    margin-bottom: 50px;
+    position: relative;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgb(0, 0, 0/10%);
+  }
+
+  .label {
+    font-weight: 500;
+    color: #62646c;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  textarea.form-control {
+    height: 250px;
+  }
+
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {

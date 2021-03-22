@@ -96,7 +96,7 @@
                             <div class="featured-service-content">
                                 <h3>Air transportation</h3>
                                 <p>Intrinsicly strategize exceptional mindshare vis-a-vis functionalized imperatives.Energistically incentivize innovative convergence through wireless ideas.</p>
-                                <a class="btn btn-primary readmore" href="service-single.html">Continue reading<i class="fa fa-long-arrow-right"></i></a>
+                                <a class="btn btn-primary readmore" href="#">Continue reading<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                             <div class="featured-service-content">
                                 <h3>Marine transportation</h3>
                                 <p>Intrinsicly strategize exceptional mindshare vis-a-vis functionalized imperatives.Energistically incentivize innovative convergence through wireless ideas.</p>
-                                <a class="btn btn-primary readmore" href="service-single.html">Continue reading<i class="fa fa-long-arrow-right"></i></a>
+                                <a class="btn btn-primary readmore" href="#">Continue reading<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                             <div class="featured-service-content">
                                 <h3>Trucking</h3>
                                 <p>Intrinsicly strategize exceptional mindshare vis-a-vis functionalized imperatives.Energistically incentivize innovative convergence through wireless ideas.</p>
-                                <a class="btn btn-primary readmore" href="service-single.html">Continue reading<i class="fa fa-long-arrow-right"></i></a>
+                                <a class="btn btn-primary readmore" href="#">Continue reading<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
