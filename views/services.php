@@ -35,7 +35,7 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="service-intro-thumb text-center">
-										<img src="img/service-thumb.jpg" alt="service">
+										<img src="../assets/images/service-thumb.jpg" alt="service">
 									</div>
 								</div><!--/.col-->
 								<div class="col-sm-6">
