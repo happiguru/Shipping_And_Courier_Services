@@ -3,6 +3,21 @@
     margin: 0;
     padding: 0;
   }
+
+  h1 {
+    font-size: 48px;
+    line-height: 72px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 10px;
+    font-family: 'montserrat', sans-serif;
+  }
   
   .navbar { background-color: #484848; }
   .navbar .navbar-nav .nav-link { color: #fff; }
@@ -40,7 +55,44 @@
     font-size: 18px;
     line-height: 1.9;
   }
-  
+
+  .page-title-secttion{
+    text-align: center;
+    padding: 50px 0 15px;
+    background: #1a8ae1;
+  }
+  section {
+    position: relative;
+  }
+
+  .page-header {
+    margin: 0 0 10px;
+  }
+
+  .page-header h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .breadcrumb {
+    padding: 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .breadcrumb li {
+    padding: 0 2px 0;
+  }
+
+  .breadcrumb a,
+  .breadcrumb > .active {
+    color: #fff;
+    text-align: center;
+  }
+
+
 
 strong { font-weight: 500; }
 
