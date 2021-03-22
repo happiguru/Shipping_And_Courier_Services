@@ -22,11 +22,17 @@
 <?php
     require('header.php');
 ?>
-<div class="container">
-    <p>
-        
-    </p>
-</div>
+<section class="page-title-secttion">
+    <div class="container">
+      <div class="page-header">
+        <h1>Track A Parcel</h1>
+      </div>
+      <ol class="breadcrumb justify-content-center">
+        <li><a href="#">Home </a></li>
+        <li class="active">/ Track A Parcel</li>
+      </ol>
+    </div>
+</section>
 <div class="container">
     <h2 class="my-3">Know the location of your parcel</h2>
     <p>

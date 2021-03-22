@@ -17,6 +17,19 @@
   <body>
 <?php
     require('header.php');
+?>
+<section class="page-title-secttion">
+    <div class="container">
+      <div class="page-header">
+        <h1>Contact</h1>
+      </div>
+      <ol class="breadcrumb justify-content-center">
+        <li><a href="#">Home </a></li>
+        <li class="active">/ Contact</li>
+      </ol>
+    </div>
+</section>
+<?php
     include_once("map.php");
     require_once('footer.php')
 ?>
