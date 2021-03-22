@@ -9,6 +9,12 @@
     line-height: 72px;
   }
 
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px; 
+  }
+
   h1,
   h2,
   h3,
@@ -17,6 +23,12 @@
   h6 {
     margin: 0 0 10px;
     font-family: 'montserrat', sans-serif;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
   
   .navbar { background-color: #484848; }
@@ -97,9 +109,32 @@
   }
 
   .section-padding {
-    padding: 150px 0;
+    padding: 50px 0;
   }
 
+  img { 
+    max-width: 100%;
+  }
+
+  .service-intro-content {
+    line-height: 30px;
+  }
+
+  .service-intro-content p {
+    margin-bottom: 40px;
+  }
+
+  .mark {
+    color: #1a8ae1;
+    background: transparent;
+    padding: 0;
+  }
+
+  .service-intro-content ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 20px;
+  }
 
 strong { font-weight: 500; }
 
