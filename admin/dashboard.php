@@ -29,12 +29,13 @@
               <div class="col-12 col-md-9">
                 <h3>Admin Dashboard</h3>
                 <p>
-                <?php
-                    if($_SESSION['username']){
-                    }
-                ?>
-                Welcome <?php echo $_SESSION['username']; ?>. Click here to <a href="logout.php" title="logout">
-                Logout<?php}else echo "<h1>Please login first .</h1>";?>
+                  <?php
+                      if($_SESSION['username']){
+                         echo 'Welcome ' . $_SESSION['username'] . ' Click here to <a href="logout.php" title="logout">
+                        Logout</a>';
+                      } else echo "<h1>Please login first .</h1>";
+                      ?>
+                  
                 </p>
               </div>
           </div>

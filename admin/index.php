@@ -1,8 +1,3 @@
-<?php
-    //session_start();
-    //unset($_SESSION['USER_ADMIN_ID']);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>

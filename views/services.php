@@ -17,5 +17,6 @@
   <body>
 <?php
     require('header.php');
+    include_once("map.php");
     require_once('footer.php')
 ?>
