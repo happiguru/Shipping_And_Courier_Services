@@ -51,7 +51,7 @@
         <h3 class="text-center my-4">Enter Tracking Number</h3> <br />
         <form action="../controllers/tracking_exec.php" method="POST" name="tracking" class="form-inline d-flex justify-content-center mb-4">
             <input type="text" class="form-control mb-2 mr-sm-2" name ="trackingnumber" id="inlineFormInputName2" placeholder="001234567" required>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <button type="submit" class="btn btn-primary mb-2">Track</button>
         </form>
     </div>
 </div>

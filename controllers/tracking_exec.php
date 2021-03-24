@@ -29,13 +29,13 @@ if($errflag){
     exit();
 }
 
-$query = "SELECT * FROM tracking WHERE num = '$tracking_number'";
+$query = "SELECT * FROM tracking WHERE tracking_number = '$tracking_number'";
 $result = mysqli_query($conn, $query);
 
 if(mysqli_num_rows($result) == 1){
     session_regenerate_id();
     $user = mysqli_fetch_assoc($result);
-    $_SESSION['USER_NUM'] = $user['num'];
+    $_SESSION['USER_NUM'] = $user['tracking_number'];
     session_write_close();
     header("location: ../views/tracking_details.php");
     exit();

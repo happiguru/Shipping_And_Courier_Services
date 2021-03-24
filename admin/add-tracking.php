@@ -50,9 +50,9 @@
                       <label class="mr-sm-2" for="inlineFormCustomSelect">Shipment Type</label>
                       <select class="custom-select mr-sm-2" name ="shipmentType" id="inlineFormCustomSelect">
                         <option selected>Choose...</option>
-                        <option value="1">Air Freight</option>
-                        <option value="2">Shipping</option>
-                        <option value="3">Land freight</option>
+                        <option value="Air Freight">Air Freight</option>
+                        <option value="Marine Freight">Shipping</option>
+                        <option value="Land Freight">Land freight</option>
                       </select>
                     </div>
                   </div>
@@ -80,7 +80,7 @@
                       <input type="text" name ="sstate" class="form-control" id="validationDefault04" placeholder="State" required>
                     </div>
                     <div class="col-md-3 mb-3">
-                      <label for="validationDefault05">Source Zip</label>
+                      <label for="validationDefault05">Source Country</label>
                       <input type="text" name ="szip" class="form-control" id="validationDefault05" placeholder="Zip">
                     </div>
                   </div>
@@ -94,7 +94,7 @@
                       <input type="text" name ="cstate" class="form-control" id="validationDefault04" placeholder="State" required>
                     </div>
                     <div class="col-md-3 mb-3">
-                      <label for="validationDefault05">Current Zip</label>
+                      <label for="validationDefault05">Current Country</label>
                       <input type="text" name ="czip" class="form-control" id="validationDefault05" placeholder="Zip">
                     </div>
                   </div>
@@ -108,7 +108,7 @@
                       <input type="text" name ="dstate" class="form-control" id="validationDefault04" placeholder="State" required>
                     </div>
                     <div class="col-md-3 mb-3">
-                      <label for="validationDefault05">Destination Zip</label>
+                      <label for="validationDefault05">Destination Country</label>
                       <input type="text" name ="dzip" class="form-control" id="validationDefault05" placeholder="Zip">
                     </div>
                   </div>
@@ -121,11 +121,11 @@
                     <label class="mr-sm-2">Parcel Status</label>
                       <select class="custom-select mr-sm-2" name ="status">
                         <option selected>Choose...</option>
-                        <option  value="1">Shipped</option>
-                        <option value="2">Delivered</option>
-                        <option value="3">Transit</option>
-                        <option value="4">Packaging</option>
-                        <option value="5">Missing Parcel</option>
+                        <option  value="Shipped">Shipped</option>
+                        <option value="DElivered">Delivered</option>
+                        <option value="Transit">Transit</option>
+                        <option value="Packaging">Packaging</option>
+                        <option value="Missing Parcel">Missing Parcel</option>
                       </select>
                     </div>
                   </div>

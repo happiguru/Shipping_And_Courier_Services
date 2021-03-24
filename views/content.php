@@ -5,8 +5,8 @@
             <img class="img-fluid mt-4" src="https://demo.farost.net/equita/wp-content/uploads/2020/04/theme_image_20.jpg" alt="reliable logistics">
         </div>
         <div class="col-12 col-md-8">
-            <section>
-                <div>Providing Full Range Of Transportation Worldwide.</div>
+            <section class="service-topic">
+                <div class="topic">Providing Full Range Of Transportation Worldwide.</div>
         
                 <h2>
                 <span>Reliable Logistic &amp; Transport <br>Solutions Saves Your Time!</span>
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <section>
-                    <div>Safe & Reliable Cargo Solutions!</div>
+                    <div class="topic">Safe & Reliable Cargo Solutions!</div>
                     <h2><span>Managing Logistics For World’s Multinational Companies.</span></h2>
                 </section>
             </div>
