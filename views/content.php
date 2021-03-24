@@ -14,7 +14,7 @@
             </section>
             <div class="row">
                 <div class="col-12 col-md-8">
-                    <p>Green Pacific Freight & Logistics is a representative logistics operator providing full range of 
+                    <p>NEXTGEN Freight & Logistics is a representative logistics operator providing full range of 
                     service in the sphere of customs clearance transportation worldwide for any cargo.</p>
                     <p>We pride ourselves on providing the best transport and shipping services available allover the world. Our skilled personnel, utilising the latest 
                     communications, tracking and combined with experience through integrated supply chain solutions!
