@@ -16,7 +16,7 @@
   </head>
   <body>
       <?php
-        include_once('../views/header.php');
+        include_once('header.php');
       ?>
       <div class="container">
         <div class="top-content">
