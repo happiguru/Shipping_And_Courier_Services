@@ -51,7 +51,7 @@
                       <select class="custom-select mr-sm-2" name ="shipmentType" id="inlineFormCustomSelect">
                         <option selected>Choose...</option>
                         <option value="Air Freight">Air Freight</option>
-                        <option value="Marine Freight">Shipping</option>
+                        <option value="Marine Freight">Marine Freight</option>
                         <option value="Land Freight">Land freight</option>
                       </select>
                     </div>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault05">Source Country</label>
-                      <input type="text" name ="szip" class="form-control" id="validationDefault05" placeholder="Zip">
+                      <input type="text" name ="szip" class="form-control" id="validationDefault05" placeholder="Country">
                     </div>
                   </div>
                   <div class="form-row">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault05">Current Country</label>
-                      <input type="text" name ="czip" class="form-control" id="validationDefault05" placeholder="Zip">
+                      <input type="text" name ="czip" class="form-control" id="validationDefault05" placeholder="Country">
                     </div>
                   </div>
                   <div class="form-row">
@@ -109,7 +109,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault05">Destination Country</label>
-                      <input type="text" name ="dzip" class="form-control" id="validationDefault05" placeholder="Zip">
+                      <input type="text" name ="dzip" class="form-control" id="validationDefault05" placeholder="Country">
                     </div>
                   </div>
                   <div class="form-row">
