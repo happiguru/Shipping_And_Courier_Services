@@ -12,7 +12,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/cbdf2b0f0e.js" crossorigin="anonymous"></script>
-    <title>Golf Courrier and Shipment</title>
+    <title>NEXTGEN - Logistics and Shipment</title>
   </head>
   <body>
   
@@ -62,5 +62,6 @@
   </div>
 </div>
 <?php
+    include_once("views/map.php");
     include_once("views/footer.php");
 ?>

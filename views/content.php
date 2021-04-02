@@ -1,12 +1,12 @@
-<div class="col-12 border">
+<div class="col-12">
     <h2>Our Services</h2>
     <div class="row">
         <div class="col-12 col-md-4">
             <img class="img-fluid mt-4" src="https://demo.farost.net/equita/wp-content/uploads/2020/04/theme_image_20.jpg" alt="reliable logistics">
         </div>
         <div class="col-12 col-md-8">
-            <section>
-                <div>Providing Full Range Of Transportation Worldwide.</div>
+            <section class="service-topic">
+                <div class="topic">Providing Full Range Of Transportation Worldwide.</div>
         
                 <h2>
                 <span>Reliable Logistic &amp; Transport <br>Solutions Saves Your Time!</span>
@@ -14,7 +14,7 @@
             </section>
             <div class="row">
                 <div class="col-12 col-md-8">
-                    <p>Green Pacific Freight & Logistics is a representative logistics operator providing full range of 
+                    <p>NEXTGEN Freight & Logistics is a representative logistics operator providing full range of 
                     service in the sphere of customs clearance transportation worldwide for any cargo.</p>
                     <p>We pride ourselves on providing the best transport and shipping services available allover the world. Our skilled personnel, utilising the latest 
                     communications, tracking and combined with experience through integrated supply chain solutions!
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <section>
-                    <div>Safe & Reliable Cargo Solutions!</div>
+                    <div class="topic">Safe & Reliable Cargo Solutions!</div>
                     <h2><span>Managing Logistics For World’s Multinational Companies.</span></h2>
                 </section>
             </div>
