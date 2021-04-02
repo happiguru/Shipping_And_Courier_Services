@@ -11,7 +11,7 @@ Shipping and Courier Service Website Built with PHP | HTML5 | JavaScript and Boo
 
 ## Live Demo
 
-[Live Demo Link](http://www.lekunzestanley.me//)
+[Live Demo Link](http://flight.learningo.club/index.php)
 
 
 ## Getting Started
@@ -24,8 +24,7 @@ To get a local copy  and to set it up and running follow these simple example st
 - Browser
 - Internet
 
-- Download the code from repository (https://github.com/happiguru/) and double click the index.html file found inside the `dist` folder.
-
+- Download the code from repository (https://github.com/happiguru/shipping_courier_services).
 
 ## Authors
 
