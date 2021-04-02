@@ -4,7 +4,7 @@
         require_once('../controllers/controllers.php');
 
         $db_login = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
-
+        $id = $_POST['id'];
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
         $trackingNumber = $_POST['tracknum'];
@@ -24,8 +24,8 @@
         $contactNumber = $_POST['contactnumber'];
         $status = $_POST['status'];
 
-        $query = "INSERT INTO tracking SET 
-        id= '',
+        $query = "UPDATE tracking SET 
+        id= $id,
         first_name ='$fname',
         last_name ='$lname',
         tracking_number ='$trackingNumber',
@@ -51,7 +51,7 @@
             die("Connection failed: " . mysqli_connect_error());
         }else {
             header("Location: ./dashboard.php"); 
-            echo "<p>New Parcel Added for Tracking</p>";
+            echo "<p>Update Successful</p>";
         }
     }
 ?>

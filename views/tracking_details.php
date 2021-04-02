@@ -47,7 +47,6 @@ if($_SESSION['USER_NUM'] == "") {
             $source_address = $row['source_city'] . ', ' . $row['source_state'] . ', ' . $row['source_zip'];
             $current_address = $row['current_city'] . ', ' . $row['current_state'] . ', ' . $row['current_zip'];
             $destination_address = $row['destination_city'] . ', ' . $row['destination_state'] . ', ' . $row['destination_zip'];
-            
             $phone = $row['contact_number'];
             $status = $row['parcel_status'];
         }

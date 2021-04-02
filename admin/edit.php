@@ -1,6 +1,6 @@
 <?php
     include('session.php');
-    include_once('submittracking.php');
+    include_once('edittrack.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,23 +28,24 @@
                 include_once('./admin-sidebar.php')
               ?>
               <div class="col-12 col-md-9">
-                <h3>Add New Tracked Parcel</h3>
-                <div class="mb-3">
-                <form method="POST">
+                <h3>Update Tracked Parcel</h3>
+                <div class="mb-4">
+                <form method="POST" action="./update.php">
                   <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
+                      <input type="hidden" name="id" value="<?php echo $id; ?>">
                       <label for="validationDefault01">First name</label>
-                      <input type="text" name ="firstname" class="form-control" id="validationDefault01" placeholder="Mark" required>
+                      <input type="text" name ="firstname" class="form-control" id="validationDefault01" value="<?php echo $r_firstname; ?>" required>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                       <label for="validationDefault02">Last name</label>
-                      <input type="text" name ="lastname" class="form-control" id="validationDefault02" placeholder="Otto" required>
+                      <input type="text" name ="lastname" class="form-control" id="validationDefault02" value="<?php echo $r_lastname; ?>" required>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
                       <label for="validationDefault01">Tracking Number</label>
-                      <input type="text" name ="tracknum" class="form-control" id="validationDefault01" placeholder="123456789" required>
+                      <input type="text" name ="tracknum" class="form-control" id="validationDefault01" value="<?php echo $num; ?>" required>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                       <label class="mr-sm-2" for="inlineFormCustomSelect">Shipment Type</label>
@@ -58,84 +59,85 @@
                   </div>
                   <div class="form-row">
                     <label for="exampleFormControlTextarea1">Parcel Content</label>
-                    <textarea class="form-control" name ="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name ="content" id="exampleFormControlTextarea1" rows="3"><?php echo $content; ?></textarea>
                   </div>
                   <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
                       <label for="validationDefault01">Shipped Date</label>
-                      <input type="date" name ="sdate" class="form-control" required>
+                      <input type="date" name ="sdate" value ="<?php echo $shipdate; ?>" class="form-control" required>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                       <label for="validationDefault02">Expected Delivery Date</label>
-                      <input type="date" name ="ddate" class="form-control" required>
+                      <input type="date" name ="ddate" value ="<?php echo $estimate_date; ?>" class="form-control" required>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label for="validationDefault03">Source City</label>
-                      <input type="text" name ="scity" class="form-control" id="validationDefault03" placeholder="City" required>
+                      <input type="text" name ="scity" class="form-control" id="validationDefault03" value="<?php echo $source_city; ?>" required>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault04">Source State</label>
-                      <input type="text" name ="sstate" class="form-control" id="validationDefault04" placeholder="State" required>
+                      <input type="text" name ="sstate" class="form-control" id="validationDefault04" value="<?php echo $source_state; ?>" required>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault05">Source Country</label>
-                      <input type="text" name ="szip" class="form-control" id="validationDefault05" placeholder="Country">
+                      <input type="text" name ="szip" class="form-control" id="validationDefault05" value="<?php echo $source_country; ?>">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label for="validationDefault03">Current City</label>
-                      <input type="text" name ="ccity" class="form-control" id="validationDefault03" placeholder="City" required>
+                      <input type="text" name ="ccity" class="form-control" id="validationDefault03" value="<?php echo $current_city; ?>" required>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault04">Current State</label>
-                      <input type="text" name ="cstate" class="form-control" id="validationDefault04" placeholder="State" required>
+                      <input type="text" name ="cstate" class="form-control" id="validationDefault04" value="<?php echo $current_state; ?>" required>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault05">Current Country</label>
-                      <input type="text" name ="czip" class="form-control" id="validationDefault05" placeholder="Country">
+                      <input type="text" name ="czip" class="form-control" id="validationDefault05" value="<?php echo $current_country; ?>">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-md-6 mb-3">
                       <label for="validationDefault03">Destination City</label>
-                      <input type="text" name ="dcity" class="form-control" id="validationDefault03" placeholder="City" required>
+                      <input type="text" name ="dcity" class="form-control" id="validationDefault03" value="<?php echo $destination_city; ?>" required>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault04">Destination State</label>
-                      <input type="text" name ="dstate" class="form-control" id="validationDefault04" placeholder="State" required>
+                      <input type="text" name ="dstate" class="form-control" id="validationDefault04" value="<?php echo $destination_state; ?>" required>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="validationDefault05">Destination Country</label>
-                      <input type="text" name ="dzip" class="form-control" id="validationDefault05" placeholder="Country">
+                      <input type="text" name ="dzip" class="form-control" id="validationDefault05" value="<?php echo $destination_country; ?>">
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
                       <label>Contact Number</label>
-                      <input type="text" name ="contactnumber" class="form-control" required>
+                      <input type="text" name ="contactnumber" value="<?php echo $phone; ?>" class="form-control" required>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                     <label class="mr-sm-2">Parcel Status</label>
                       <select class="custom-select mr-sm-2" name ="status">
                         <option selected>Choose...</option>
                         <option  value="Shipped">Shipped</option>
-                        <option value="DElivered">Delivered</option>
+                        <option value="Delivered">Delivered</option>
                         <option value="Transit">Transit</option>
                         <option value="Packaging">Packaging</option>
                         <option value="Missing Parcel">Missing Parcel</option>
                       </select>
                     </div>
                   </div>
-                  <input class="btn btn-primary" name="submit" type="submit" value="Submit Form"/>
+                  <input class="btn btn-primary" name="submit" type="submit" value="Update Form"/>
                 </form>
                 </div>
               </div>
           </div>
       </div>
 <?php
-    include_once('submittracking.php');
     include_once('../views/footer.php');
 ?>
+</body>
+</html>
