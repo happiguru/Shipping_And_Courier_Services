@@ -34,7 +34,7 @@
     </div>
 </section>
 <div class="container">
-    <h2 class="my-3">Know the location of your parcel</h2>
+    <h2 class="my-3">Track Parcel</h2>
     <p>
         <?php
             if(isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ){
@@ -53,6 +53,11 @@
             <input type="text" class="form-control mb-2 mr-sm-2" name ="trackingnumber" id="inlineFormInputName2" placeholder="001234567" required>
             <button type="submit" class="btn btn-primary mb-2">Track</button>
         </form>
+    </div>
+    <div class="row my-5">
+        <div class="w-75 mx-auto">
+          <img class="img-responsive" src="../assets/images/tracking/track1.jpg" alt="thumb">
+        </div>
     </div>
 </div>
 
