@@ -141,7 +141,7 @@ if($_SESSION['USER_NUM'] == "") {
                     }
                 ?>
             </p><br>
-            <div class="w-50 tracking-form mx-auto border">
+            <div class="w-100 tracking-form mx-auto border">
                 <h6 class="text-center my-4">Enter Tracking Number</h6> <br />
                 <form action="../controllers/tracking_exec.php" method="POST" name="tracking" class="form-inline d-flex justify-content-center mb-4">
                     <input type="text" class="form-control mb-2 mr-sm-2" name ="trackingnumber" id="inlineFormInputName2" placeholder="001234567" required>

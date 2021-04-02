@@ -47,7 +47,7 @@
             }
         ?>
     </p><br>
-    <div class="w-50 tracking-form mx-auto border">
+    <div class="w-100 tracking-form mx-auto border">
         <h3 class="text-center my-4">Enter Tracking Number</h3> <br />
         <form action="../controllers/tracking_exec.php" method="POST" name="tracking" class="form-inline d-flex justify-content-center mb-4">
             <input type="text" class="form-control mb-2 mr-sm-2" name ="trackingnumber" id="inlineFormInputName2" placeholder="001234567" required>
@@ -56,7 +56,7 @@
     </div>
     <div class="row my-5">
         <div class="w-75 mx-auto">
-          <img class="img-responsive" src="../assets/images/tracking/track1.jpg" alt="thumb">
+          <img class="img-responsive w-100" src="../assets/images/tracking/track1.jpg" alt="thumb">
         </div>
     </div>
 </div>
