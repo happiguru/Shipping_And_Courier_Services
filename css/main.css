@@ -13,17 +13,6 @@ body {
   color: #62646c;
 }
 
-h1 {
-  font-size: 48px;
-  line-height: 72px;
-}
-
-h2 {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 44px;
-}
-
 h1,
 h2,
 h3,
@@ -38,8 +27,18 @@ h6 {
 h1,
 h2 {
   margin-top: 10px;
-  line-height: 50px;
   font-weight: 500;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 72px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
 }
 
 h3 {
@@ -74,6 +73,11 @@ ul {
   color: #fbc531;
 }
 
+
+
+/* #region Tablet version (Tablet: up to 768px) */
+
+@media screen and (min-width: 768px) {
 .carousel-tips {
   color: #fff;
   font-weight: 500;
@@ -525,10 +529,6 @@ form.newsletter-form .form-group .form-control {
 .copyright-section li a {
   color: #fff;
 }
-
-/* #region Tablet version (Tablet: up to 768px) */
-
-@media screen and (min-width: 768px) {
 }
 
 /* #endregion */
