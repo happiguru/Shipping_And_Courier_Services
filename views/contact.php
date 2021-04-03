@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
   Country: $country,
   Message: $messages.");
 
-  $to="hguruman@gmail.com";
+  $to="info@nextgenlogisticsllc.com";
   $subject="FeedBack Form";
   $headers = "From: $email"; 
   $sent = mail($to, $subject, $message, $headers) ; 
@@ -127,58 +127,9 @@ if(isset($_POST['submit'])){
               <span>384 Maple Circle</span>
               <span>Simi Valley Navada 47489</span>
               <br>
-              <span>T.(554) 616 9926</span>
-              <span>M.(554) 616 9926</span>
-              <span>F.(554) 616 9926</span>
-              <a href="#">example@yahoo.com</a>
-
-            </address>
-          </div>
-        </div><!-- /.col -->
-
-        <div class="col-sm-3 col-xs-6">
-          <div class="office-address">
-            <h3>Atlanta Office</h3>
-            <address>
-              <span>384 Maple Circle</span>
-              <span>Simi Valley Navada 47489</span>
-              <br>
-              <span>T.(554) 616 9926</span>
-              <span>M.(554) 616 9926</span>
-              <span>F.(554) 616 9926</span>
-              <a href="#">example@yahoo.com</a>
-
-            </address>
-          </div>
-        </div><!-- /.col -->
-
-        <div class="col-sm-3 col-xs-6">
-          <div class="office-address">
-            <h3>Singapore Office</h3>
-            <address>
-              <span>384 Maple Circle</span>
-              <span>Simi Valley Navada 47489</span>
-              <br>
-              <span>T.(554) 616 9926</span>
-              <span>M.(554) 616 9926</span>
-              <span>F.(554) 616 9926</span>
-              <a href="#">example@yahoo.com</a>
-
-            </address>
-          </div>
-        </div><!-- /.col -->
-
-        <div class="col-sm-3 col-xs-6">
-          <div class="office-address">
-            <h3>Canada Office</h3>
-            <address>
-              <span>384 Maple Circle</span>
-              <span>Simi Valley Navada 47489</span>
-              <br>
-              <span>T.(554) 616 9926</span>
-              <span>M.(554) 616 9926</span>
-              <span>F.(554) 616 9926</span>
-              <a href="#">example@yahoo.com</a>
+              <span>T.(661) 769 6179</span>
+              <span>M.(661) 769 6179</span>
+              <a href="#">info@nextgenlogisticsllc.com</a>
 
             </address>
           </div>

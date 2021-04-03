@@ -42,7 +42,7 @@
         Delivery Contact Name: $contname,
         Contents of Package: $conpackage.");
 
-    $to="hguruman@gmail.com";
+    $to="info@nextgenlogisticsllc.com";
     $subject="Request Form";
     $headers = "From: $email"; 
     $sent = mail($to, $subject, $message, $headers) ; 
