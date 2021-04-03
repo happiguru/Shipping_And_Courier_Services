@@ -2,7 +2,6 @@
     if(isset($_POST['submit'])){
         require_once('../database/config.php');
         require_once('../controllers/controllers.php');
-
         $db_login = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
         $id = $_POST['id'];
         $fname = $_POST['firstname'];
@@ -25,7 +24,7 @@
         $status = $_POST['status'];
 
         $query = "UPDATE tracking SET 
-        id= $id,
+        
         first_name ='$fname',
         last_name ='$lname',
         tracking_number ='$trackingNumber',
@@ -43,7 +42,7 @@
         destination_state ='$destinationState',
         destination_zip ='$destinationZip',
         contact_number ='$contactNumber',
-        parcel_status ='$status'";
+        parcel_status ='$status' WHERE id='$id'";
 
         $insert = mysqli_query($db_login, $query);
 
