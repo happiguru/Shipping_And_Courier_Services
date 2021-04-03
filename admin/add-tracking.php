@@ -121,11 +121,14 @@
                     <label class="mr-sm-2">Parcel Status</label>
                       <select class="custom-select mr-sm-2" name ="status">
                         <option selected>Choose...</option>
-                        <option  value="Shipped">Shipped</option>
-                        <option value="DElivered">Delivered</option>
-                        <option value="Transit">Transit</option>
-                        <option value="Packaging">Packaging</option>
+                        <option  value="Shipped For Delivery">Shipped For Delivery</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="On Transit">On Transit</option>
+                        <option value="On Packaging">On Packaging</option>
                         <option value="Missing Parcel">Missing Parcel</option>
+                        <option value="Package held - Insurance Requested">Package held - Insurance Requested</option>
+                        <option value="Package held - Custom Services">Package held - Custom Services</option>
+                        <option value="Package held - City Permit Approval">Package held - City Permit Approval</option>
                       </select>
                     </div>
                   </div>
