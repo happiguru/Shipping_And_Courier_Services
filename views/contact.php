@@ -124,8 +124,8 @@ if(isset($_POST['submit'])){
           <div class="office-address">
             <h3>USA Office</h3>
             <address>
-              <span>384 Maple Circle</span>
-              <span>Simi Valley Navada 47489</span>
+              <span>2400 W 84th St #7, Hialeah</span>
+              <span>FL 33016, United States</span>
               <br>
               <span>T.(661) 769 6179</span>
               <span>M.(661) 769 6179</span>
