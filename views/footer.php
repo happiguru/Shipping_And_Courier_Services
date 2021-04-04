@@ -15,7 +15,7 @@
 						<a href="#">info@nextgenlogisticsllc.com</a>
 						<br>
 						<br>
-						<span class="map-marker">384 Maple Circle<br>Simi Valley Nevada, 24757</span>
+						<span class="map-marker">2400 W 84th St #7<br>Hialeah FL 33016, United States</span>
 					</address>
 
 					
