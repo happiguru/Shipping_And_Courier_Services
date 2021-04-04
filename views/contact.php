@@ -127,8 +127,8 @@ if(isset($_POST['submit'])){
               <span>2400 W 84th St #7, Hialeah</span>
               <span>FL 33016, United States</span>
               <br>
-              <span>T.(661) 769 6179</span>
-              <span>M.(661) 769 6179</span>
+              <span>T. +1 (203) 442 4225</span><br>
+              <span>M.+1 (203) 442 4225</span>
               <a href="#">info@nextgenlogisticsllc.com</a>
 
             </address>

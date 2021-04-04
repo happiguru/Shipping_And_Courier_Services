@@ -10,9 +10,9 @@
 					<br>
 
 					<address>
-						<strong>+1 (661) 769-6-179</strong>
+						<strong>+1 (203) 442 4225</strong>
 						<br>
-						<a href="#">customerservice@nextgen.com</a>
+						<a href="#">info@nextgenlogisticsllc.com</a>
 						<br>
 						<br>
 						<span class="map-marker">384 Maple Circle<br>Simi Valley Nevada, 24757</span>
