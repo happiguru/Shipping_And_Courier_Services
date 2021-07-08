@@ -1,5 +1,9 @@
-# Shipping and Courrier Service Application
-Shipping and Courier Service Website Built with PHP | HTML5 | JavaScript and Bootstrap
+![visitors](https://visitor-badge.glitch.me/badge?page_id=happiguru/Shipping_And_Courier_Services)
+
+## Shipping and Courrier Service Application
+
+This project is an implementation of a courier and shipping website with features like package tracking, admin-backend, and user-frontend that was built fully with PHP, HTML, and CSS3.
+
 ![screenshot](app_screenshot.png)
 ## Built With
 
@@ -15,7 +19,6 @@ Shipping and Courier Service Website Built with PHP | HTML5 | JavaScript and Boo
 ![screenshot](tracking.png)
 
 ## Getting Started
-
 
 To get a local copy  and to set it up and running follow these simple example steps.
 
