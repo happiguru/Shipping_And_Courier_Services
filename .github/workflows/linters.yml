@@ -1,6 +1,11 @@
 name: Linters
 
-on: pull_request
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 env:
   FORCE_COLOR: 1
@@ -8,41 +13,71 @@ env:
 jobs:
   lighthouse:
     name: Lighthouse
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
-      - name: Setup Lighthouse
-        run: npm install -g @lhci/cli@0.4.x
-      - name: Lighthouse Report
-        run: lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=.
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Install LHCI
+        run: npm install --no-save @lhci/cli@0.4.x
+      - name: Run Lighthouse (LHCI)
+        run: npx lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=.
+      - name: Upload LHCI artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lhci-report
+          path: ./.lighthouseci || .lhci || ./lhci-*.html
+
   webhint:
     name: Webhint
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
-      - name: Setup Webhint 
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Ensure .hintrc
         run: |
-          npm install --save-dev hint@6.0.x
           [ -f .hintrc ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css/.hintrc
-      - name: Webhint Report
-        run: npx hint --telemetry=off .
+      - name: Run webhint (produce JSON)
+        run: npx hint --telemetry=off --format=json . > webhint-report.json
+      - name: Upload webhint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webhint-report
+          path: webhint-report.json
+
   stylelint:
     name: Stylelint
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
-      - name: Setup Stylelint
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Ensure .stylelintrc.json
         run: |
-          npm install --save-dev stylelint@13.3.x stylelint-scss@3.17.x stylelint-config-standard@20.0.x
           [ -f .stylelintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css/.stylelintrc.json
-      - name: Stylelint Report
-        run: npx stylelint "**/*.{css,scss}"
+      - name: Run stylelint (produce JSON)
+        run: npx stylelint "**/*.{css,scss}" --formatter json > stylelint-report.json
+      - name: Upload stylelint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stylelint-report
+          path: stylelint-report.json
