@@ -43,14 +43,14 @@
           <div class="section-heading">
             <h2 class="section-title">A few words about us</h2>
           </div>
-          <span>Holisticly monetize empowered processes after leveraged resources. Phosfluorescently impact enterprise-wide platforms after future-proof niche markets.</span>
+          <span>NEXTGEN Logistics helps people and businesses move shipments with clear communication, practical service options and a focus on dependable handling.</span>
           <br>
           <br>
-          <p>Dynamically conceptualize seamless technology rather than wireless users. Phosfluorescently visualize superior ideas before interdependent users. Synergistically re-engineer collaborative vortals whereas seamless sources. Professionally whiteboard 24/365 manufactured products without user friendly ideas.</p>
+          <p>From the first quote to final delivery, our goal is to make shipping easier to understand. We help customers compare available transport options, share shipment details and follow tracking updates when they are available.</p>
           <br>							
-          <p>Collaboratively enable multidisciplinary value through resource sucking meta-services. Globally visualize standards compliant resources vis-a-vis team building initiatives. Energistically aggregate leveraged vortals rather than competitive vortals. Distinctively engineer e-business methods of empowerment without market-driven partnerships. Uniquely initiate clicks-and-mortar processes after resource sucking data.Quickly re-engineer diverse ROI with state of the art mindshare.</p>
+          <p>We take a practical, customer-first approach: accurate shipment information, responsive support and clear next steps. Service availability, transit estimates and handling requirements depend on the route and shipment details.</p>
           <br>
-          <p>Distinctively foster functionalized e-commerce vis-a-vis intermandated expertise. Quickly re-engineer diverse ROI with state of the art mindshare. Conveniently engineer granular ROI after future-proof resources. </p>
+          <p>We continue to improve the customer experience across freight enquiries, shipment tracking and quote requests. Contact our team to confirm the options available for your delivery. </p>
         </div><!--/.about-us-intro-content  -->
 
       </div><!--/.col-->
@@ -67,17 +67,17 @@
           </div>
           <p>Appropriately foster professional initiatives rather than out-of-the-box growth strategies. Dramatically repurpose fully researched schemas via bleeding-edge best practices. Uniquely simplify diverse expertise with interactive communities. Quickly e-enable sticky process improvements before multimedia based testing procedures. Dramatically productivate maintainable platforms after standardized information.Distinctively engineer e-business methods of empowerment without market-driven partnerships. </p>
           <br>							
-          <p>Collaboratively enable multidisciplinary value through resource sucking meta-services. Globally visualize standards compliant resources vis-a-vis team building initiatives. Energistically aggregate leveraged vortals rather than competitive vortals. Distinctively engineer e-business methods of empowerment without market-driven partnerships. Uniquely initiate clicks-and-mortar processes after resource sucking data.Quickly re-engineer diverse ROI with state.</p>
+          <p>Route-aware service through resource sucking meta-services. Clear communication vis-a-vis team building initiatives. Energistically aggregate leveraged vortals rather than competitive vortals. Distinctively engineer e-business methods of empowerment without market-driven partnerships. Uniquely initiate clicks-and-mortar processes after resource sucking data.Quickly re-engineer diverse ROI with state.</p>
         </div><!-- /.advantage-left-content -->
       </div><!-- /.col -->
       <div class="col-md-4 col-sm-5 col-xs-12">
         <div class="advantage-right-content">
           <div>
-            <h3>Globally visualize standards compliant resources</h3>
+            <h3>Clear communication</h3>
             <p>Uniquely initiate clicks-and-mortar processes after resource sucking data.Quickly re-engineer diverse.</p>
           </div>
           <div>
-            <h3>Collaboratively enable multidisciplinary value</h3>
+            <h3>Route-aware service</h3>
             <p>Uniquely initiate clicks-and-mortar processes after resource sucking data.Quickly re-engineer diverse ROI.</p>
           </div>
         </div><!-- /.advantage-right-content -->

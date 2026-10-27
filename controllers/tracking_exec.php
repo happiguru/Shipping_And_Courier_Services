@@ -1,52 +1,28 @@
 <?php
-// Start Session
-session_start();
-
-require_once('../database/config.php');
-require_once('../controllers/controllers.php');
-
-$php_errormsg = array();
-
-$errflag = false;
-
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
-
-if(!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    $isHttps = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+    session_set_cookie_params(['httponly' => true, 'secure' => $isHttps, 'samesite' => 'Lax', 'path' => '/']);
+    session_start();
 }
-
-$tracking_number = cleanInt($_POST['trackingnumber']);
-
-if($tracking_number == '') {
-    $php_errormsg[] = 'Empty tracking field not allowed';
-    $errflag = true;
+require_once __DIR__ . '/../database/connection.php';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Allow: POST'); http_response_code(405); exit('Method not allowed'); }
+$trackingNumber = trim((string)($_POST['trackingnumber'] ?? ''));
+if ($trackingNumber === '' || strlen($trackingNumber) > 100 || !preg_match('/^[A-Za-z0-9_-]+$/', $trackingNumber)) {
+    $_SESSION['ERRMSG_ARR'] = ['Enter a valid tracking number.']; header('Location: ../views/tracking.php'); exit();
 }
-
-if($errflag){
-    $_SESSION['ERRMSG_ARR'] = $php_errormsg;
-    session_write_close();
-    header("location: ../views/tracking.php");
-    exit();
+if (!$db_login instanceof PDO) {
+    $_SESSION['ERRMSG_ARR'] = ['Tracking is temporarily unavailable. Please try again shortly.']; header('Location: ../views/tracking.php'); exit();
 }
-
-$query = "SELECT * FROM tracking WHERE tracking_number = '$tracking_number'";
-$result = mysqli_query($conn, $query);
-
-if(mysqli_num_rows($result) == 1){
-    session_regenerate_id();
-    $user = mysqli_fetch_assoc($result);
-    $_SESSION['USER_NUM'] = $user['tracking_number'];
-    session_write_close();
-    header("location: ../views/tracking_details.php");
-    exit();
-} else {
-    $php_errormsg[] = 'Provide a valid tracking number';
-    $errflag = true;
-    if($errflag) {
-        $_SESSION['ERRMSG_ARR'] = $php_errormsg;
-        session_write_close();
-        header("location: ../views/tracking.php");
-        exit();
-    }
-};
-?>
+try {
+    $stmt = $db_login->prepare('SELECT tracking_number FROM tracking WHERE tracking_number = :tracking_number LIMIT 1');
+    $stmt->execute([':tracking_number' => $trackingNumber]);
+    $shipment = $stmt->fetch();
+} catch (Throwable $exception) {
+    error_log('Tracking lookup failed: ' . $exception->getMessage());
+    $_SESSION['ERRMSG_ARR'] = ['Tracking is temporarily unavailable. Please try again shortly.']; header('Location: ../views/tracking.php'); exit();
+}
+if ($shipment) {
+    session_regenerate_id(true); $_SESSION['USER_NUM'] = $shipment['tracking_number']; header('Location: ../views/tracking_details.php'); exit();
+}
+$_SESSION['ERRMSG_ARR'] = ['We could not find that tracking number. Please check it and try again.'];
+header('Location: ../views/tracking.php'); exit();

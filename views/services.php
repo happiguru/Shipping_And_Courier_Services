@@ -43,7 +43,7 @@
                             <div class="section-heading">
                                 <h2 class="section-title">Moving and storage services</h2>
                             </div>
-                            <span class="mark">Competently restore adaptive quality vectors with bricks-and-clicks results. Enthusiastically embrace interoperable vortals whereas alternative technologies.</span>
+                            <span class="mark">Choose a shipping option that fits your shipment, route, timing and handling requirements.</span>
                             <p>
                                 Proactively productize principle-centered processes after business portals. Enthusiastically target distributed e-markets whereas 24/365 innovation. Completely mesh prospective strategic theme areas before
                                 high standards in materials. Phosfluorescently repurpose high-payoff metrics vis-a-vis tactical portals. Globally customize viral processes for state of the art mindshare.
@@ -52,22 +52,22 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <ul>
-                                        <li>Completely productize next generation</li>
-                                        <li>Mind share without timely experiences</li>
-                                        <li>Completely pontificate</li>
-                                        <li>Resource levelling</li>
-                                        <li>Highly potentialities</li>
+                                        <li>Pickup and delivery coordination</li>
+                                        <li>Shipment tracking support</li>
+                                        <li>Clear quote requests</li>
+                                        <li>Route-based planning</li>
+                                        <li>Responsive customer support</li>
                                     </ul>
                                 </div>
                                 <!-- /.col -->
 
                                 <div class="col-sm-6">
                                     <ul>
-                                        <li>Completely productize next generation</li>
-                                        <li>Mind share without timely experiences</li>
-                                        <li>Completely pontificate</li>
-                                        <li>Resource levelling</li>
-                                        <li>Highly potentialities</li>
+                                        <li>Pickup and delivery coordination</li>
+                                        <li>Shipment tracking support</li>
+                                        <li>Clear quote requests</li>
+                                        <li>Route-based planning</li>
+                                        <li>Responsive customer support</li>
                                     </ul>
                                 </div>
                                 <!-- /.col -->
@@ -95,8 +95,8 @@
                             </div>
                             <div class="featured-service-content">
                                 <h3>Air transportation</h3>
-                                <p>Intrinsicly strategize exceptional mindshare vis-a-vis functionalized imperatives.Energistically incentivize innovative convergence through wireless ideas.</p>
-                                <a class="btn btn-primary readmore" href="#">Continue reading<i class="fa fa-long-arrow-right"></i></a>
+                                <p>For urgent or time-sensitive cargo, ask us to confirm the available air-freight options and expected handling requirements.</p>
+                                <a class="btn btn-primary readmore" href="#">Request a quote<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -109,8 +109,8 @@
                             </div>
                             <div class="featured-service-content">
                                 <h3>Marine transportation</h3>
-                                <p>Intrinsicly strategize exceptional mindshare vis-a-vis functionalized imperatives.Energistically incentivize innovative convergence through wireless ideas.</p>
-                                <a class="btn btn-primary readmore" href="#">Continue reading<i class="fa fa-long-arrow-right"></i></a>
+                                <p>For urgent or time-sensitive cargo, ask us to confirm the available air-freight options and expected handling requirements.</p>
+                                <a class="btn btn-primary readmore" href="#">Request a quote<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -123,8 +123,8 @@
                             </div>
                             <div class="featured-service-content">
                                 <h3>Trucking</h3>
-                                <p>Intrinsicly strategize exceptional mindshare vis-a-vis functionalized imperatives.Energistically incentivize innovative convergence through wireless ideas.</p>
-                                <a class="btn btn-primary readmore" href="#">Continue reading<i class="fa fa-long-arrow-right"></i></a>
+                                <p>For urgent or time-sensitive cargo, ask us to confirm the available air-freight options and expected handling requirements.</p>
+                                <a class="btn btn-primary readmore" href="#">Request a quote<i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -1,71 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link href="../css/cssreset.css" rel="stylesheet" />
-    <link href="../css/bootstrap.css" rel="stylesheet" />
-    <link href="../css/main.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/cbdf2b0f0e.js" crossorigin="anonymous"></script>
-    <title>NEXTGEN - Logistics</title>
-  </head>
-  <body>
-      <?php
-        include_once('header.php');
-      ?>
-      <div class="container">
-        <div class="top-content">
-                
-                <div class="inner-bgd">
-                    <div class="container w-50 mx-auto my-5 border">
-                        <div class="row">
-                            <div class="col-sm-12 form-box">
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3>Login to our site</h3>
-                                        <p>Enter your username and password to log on:</p>
-                                    </div>
-                                    <p>
-                                        <?php
-                                            if(isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count('ERRMSG_ARR') >0 ){
-                                                echo '<p class="alert-danger">' ;
-                                                    foreach($_SESSION['ERRMSG_ARR'] as $msg) {
-                                                        echo $msg;
-                                                    }
-                                                echo '</p>';
-                                                unset($_SESSION['ERRMSG_ARR']);
-                                            }
-                                        ?>
-                                    </p>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-lock"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                    <form role="form" action="login-exec.php" name ="login" method="POST" class="login-form">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-username">Username</label>
-                                            <input type="text" name="username" placeholder="Username..." class="form-username form-control" id="form-username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-password">Password</label>
-                                            <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
-                                        </div>
-                                        <button type="submit" class="btn btn-md text-white bg-danger">Sign in!</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-      </div>
 <?php
-    include_once('../views/footer.php');
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')) === 'https';
+    session_set_cookie_params(['httponly'=>true,'secure'=>$isHttps,'samesite'=>'Lax','path'=>'/']);
+    session_start();
+}
+if (empty($_SESSION['csrf_token'])) $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+if (!empty($_SESSION['userId']) && !empty($_SESSION['username'])) { header('Location: dashboard.php'); exit(); }
 ?>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f7fb"><title>Administrator sign in · NEXTGEN Logistics</title><link rel="stylesheet" href="assets/admin.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
+.login-screen{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);background:#fff}.login-visual{position:relative;overflow:hidden;background:linear-gradient(145deg,#0d1d39,#173b70 68%,#1769ff);padding:clamp(28px,5vw,68px);display:flex;flex-direction:column;justify-content:space-between;color:white}.login-visual:before,.login-visual:after{content:"";position:absolute;border:1px solid #ffffff20;border-radius:50%;width:540px;height:540px;right:-180px;top:15%;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}.login-visual:after{width:310px;height:310px;right:-65px;top:27%;box-shadow:0 0 0 45px #ffffff08}.login-visual>*{position:relative;z-index:1}.login-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#bcd3ff;font-weight:800}.login-visual h1{font-size:clamp(34px,4.5vw,58px);letter-spacing:-1.8px;line-height:1.08;font-weight:850;max-width:520px;margin:18px 0}.login-visual p{color:#cbd9f1;line-height:1.7;max-width:420px;font-size:15px}.login-feature{display:flex;gap:13px;align-items:center;margin-top:22px;color:#e3edff;font-size:13px}.login-feature i{width:34px;height:34px;border:1px solid #ffffff35;border-radius:10px;display:grid;place-items:center}.login-copy{font-size:11px;color:#b6c8e6}.login-form-side{display:flex;align-items:center;justify-content:center;padding:35px 25px}.login-card{width:100%;max-width:420px}.login-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:#edf3ff;color:#1769ff;font-size:21px;margin-bottom:25px}.login-card h2{font-size:29px;letter-spacing:-.8px;font-weight:850;margin:0 0 9px}.login-card .login-lead{font-size:13px;color:#7c889b;margin:0 0 28px}.login-card label{display:block;font-size:12px;font-weight:750;color:#40516a;margin-bottom:8px}.login-card input{width:100%;height:48px;border:1px solid #e0e7f0;border-radius:10px;padding:0 14px;font-size:14px;margin-bottom:18px;outline:none}.login-card input:focus{border-color:#8cb4ff;box-shadow:0 0 0 3px #1769ff12}.login-submit{width:100%;height:48px;border:0;border-radius:10px;background:#1769ff;color:#fff;font-weight:800;font-size:13px;cursor:pointer;margin-top:5px}.login-submit:hover{background:#0758e8}.login-error{background:#fff0f0;border:1px solid #ffd9db;color:#a62c35;padding:12px 14px;border-radius:10px;font-size:12px;margin-bottom:18px}.login-secure{font-size:11px;color:#8995a7;text-align:center;margin-top:20px}.login-secure i{color:#16845a;margin-right:5px}@media(max-width:760px){.login-screen{grid-template-columns:1fr}.login-visual{display:none}.login-form-side{min-height:100vh;padding:28px 22px}.login-card{max-width:440px}}
+</style></head><body class="admin-app"><main class="login-screen"><section class="login-visual"><a class="admin-brand" href="../index.php" style="color:white"><span class="admin-brand-mark"><i class="fa-solid fa-truck-fast"></i></span><span>NEXTGEN Logistics</span></a><div><div class="login-tag">Administrator workspace</div><h1>Your operations.<br>One clear view.</h1><p>Manage shipments, keep tracking details accurate, and stay on top of every parcel moving through your network.</p><div class="login-feature"><i class="fa-solid fa-boxes-stacked"></i><span>Centralized shipment management</span></div><div class="login-feature"><i class="fa-solid fa-shield-halved"></i><span>Protected administrator access</span></div></div><div class="login-copy">© <?=date('Y')?> NEXTGEN Logistics · Authorized personnel only</div></section><section class="login-form-side"><div class="login-card"><div class="login-icon"><i class="fa-solid fa-lock"></i></div><h2>Welcome back</h2><p class="login-lead">Sign in to continue to your operations dashboard.</p>
+<?php if(isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR'])>0): ?><div class="login-error" role="alert"><?php foreach($_SESSION['ERRMSG_ARR'] as $msg) echo htmlspecialchars((string)$msg,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8').'<br>'; unset($_SESSION['ERRMSG_ARR']); ?></div><?php endif; ?>
+<form action="login-exec.php" method="POST" autocomplete="on"><input type="hidden" name="csrf_token" value="<?=htmlspecialchars($_SESSION['csrf_token'],ENT_QUOTES,'UTF-8')?>"><label for="username">Username</label><input type="text" name="username" id="username" placeholder="Enter your administrator username" autocomplete="username" required maxlength="190"><label for="password">Password</label><input type="password" name="password" id="password" placeholder="Enter your password" autocomplete="current-password" required><button class="login-submit" type="submit">Sign in securely <i class="fa-solid fa-arrow-right" style="margin-left:8px"></i></button></form><div class="login-secure"><i class="fa-solid fa-shield-halved"></i> Protected sign-in · For authorized administrators</div></div></section></main></body></html>

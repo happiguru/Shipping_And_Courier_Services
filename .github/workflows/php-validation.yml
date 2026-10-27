@@ -1,0 +1,31 @@
+name: PHP validation
+
+on:
+  push:
+    branches: [development]
+  pull_request:
+    branches: [development]
+
+jobs:
+  php-and-sqlite:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up PHP with SQLite support
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite
+          coverage: none
+      - name: Lint PHP files
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+          done < <(find . -type f -name '*.php' -not -path './.git/*' -print0)
+      - name: Smoke-test SQLite initialization and feature tables
+        env:
+          SQLITE_PATH: ${{ runner.temp }}/nextgen-smoke.sqlite
+        run: php tests/sqlite-smoke.php

@@ -1,17 +1,7 @@
-<div class="col-12 col-md-3 border">
-    <h3>Admin Dashboard</h3>
-    <nav class="nav flex-column bg-dark">
-        <li class="nav-item">
-            <a class="nav-link active" href="dashboard.php">View All Tracked Parcel</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./add-tracking.php">Add New Tracked Parcel</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Add New Admin</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./logout.php">Log out</a>
-        </li>
-    </nav>
-</div>
+<div class="admin-side-label">WORKSPACE</div>
+<a class="admin-side-link" href="dashboard.php"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+<a class="admin-side-link" href="dashboard.php#shipments"><i class="fa-solid fa-box"></i> All shipments</a>
+<a class="admin-side-link" href="add-tracking.php"><i class="fa-solid fa-circle-plus"></i> Create shipment</a>
+<div class="admin-side-label" style="margin-top:25px">ACCOUNT</div>
+<a class="admin-side-link" href="../index.php"><i class="fa-solid fa-globe"></i> View website</a>
+<a class="admin-side-link" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</a>

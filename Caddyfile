@@ -1,0 +1,11 @@
+{
+    admin off
+    auto_https off
+}
+
+:{$PORT:8080} {
+    root * /app
+    encode zstd gzip
+    php_server
+    file_server
+}

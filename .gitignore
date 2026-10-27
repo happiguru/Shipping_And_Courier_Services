@@ -1,2 +1,9 @@
-# .gitignore
+# Dependencies
 node_modules/
+
+# Local and production database files
+storage/*.sqlite
+storage/*.sqlite3
+storage/*.db
+storage/*.db-*
+database/private-config.php

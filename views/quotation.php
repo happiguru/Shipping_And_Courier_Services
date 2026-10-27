@@ -1,57 +1,114 @@
 <?php
-				   
-  if(isset($_REQUEST['submit'])){
-
-    $fname=$_REQUEST['firstname'];
-    $lname=$_REQUEST['lastname'];
-    $email=$_REQUEST['email'];
-    $priphone=$_REQUEST['contactnumber'];
-    $pickaddress=$_REQUEST['paddress'];
-    $delivaddress=$_REQUEST['daddress'];
-    $pickdate=$_REQUEST['pdate'];
-    $picktime=$_REQUEST['ptime'];
-    $deliverydate=$_REQUEST['ddate'];
-    $pickcity=$_REQUEST['pcity'];
-    $pickstate=$_REQUEST['pstate'];
-    $pickcountry=$_REQUEST['pcountry'];
-    $delicity=$_REQUEST['dcity'];
-    $delistate=$_REQUEST['dstate'];
-    $delicountry=$_REQUEST['dcountry'];
-    $contname=$_REQUEST['receivername'];
-    $delitype=$_REQUEST['shipmentType'];
-    $vehitype=$_REQUEST['pickupType'];
-    $conpackage=$_REQUEST['content'];
-
-    $message=("Frist Name: $fname,
-        Last Name: $lname,
-        Primary Phone: $priphone,
-        Email: $email,
-        Pick Up Date: $pickdate,
-        Pick Up Time: $picktime,
-        Pick Up Address: $pickaddress,
-        Pick Up City: $pickcity,
-        Pick Up State: $pickstate,
-        Pick Up Country: $pickcountry,
-        Delivery Date: $deliverydate,
-        Delivery Address: $delivaddress,
-        Delivery City: $delicity,
-        Delivery State: $delistate,
-        Delivery Country: $delicountry,
-        Vehicle Type: $vehitype,
-        Type of Delivery: $delitype,
-        Delivery Contact Name: $contname,
-        Contents of Package: $conpackage.");
-
-    $to="hguruman@gmail.com";
-    $subject="Request Form";
-    $headers = "From: $email"; 
-    $sent = mail($to, $subject, $message, $headers) ; 
-    if($sent){
-    echo("<center>Your Request was sent successfully</center>");
-    }else{
-
-    echo("<center>We encountered an error sending your mail</center>");
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    $isHttps = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+    session_set_cookie_params(['httponly' => true, 'secure' => $isHttps, 'samesite' => 'Lax', 'path' => '/']);
+    session_start();
+}
+if (empty($_SESSION['quote_csrf_token'])) {
+    $_SESSION['quote_csrf_token'] = bin2hex(random_bytes(32));
+}
+$quoteStatus = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) &&
+    isset($_POST['csrf_token']) && is_string($_POST['csrf_token']) &&
+    hash_equals($_SESSION['quote_csrf_token'], $_POST['csrf_token'])) {
+    $fields = [
+        'firstname' => 'First name', 'lastname' => 'Last name', 'email' => 'Email',
+        'contactnumber' => 'Contact number', 'paddress' => 'Pickup address',
+        'daddress' => 'Delivery address', 'pdate' => 'Pickup date', 'ptime' => 'Pickup time',
+        'ddate' => 'Expected delivery date', 'pcity' => 'Pickup city', 'pstate' => 'Pickup state',
+        'pcountry' => 'Pickup country', 'dcity' => 'Delivery city', 'dstate' => 'Delivery state',
+        'dcountry' => 'Delivery country', 'receivername' => 'Receiver name',
+        'shipmentType' => 'Shipment type', 'pickupType' => 'Pickup vehicle', 'content' => 'Parcel contents'
+    ];
+    $values = [];
+    $maxLengths = [
+        'firstname' => 100, 'lastname' => 100, 'email' => 254, 'contactnumber' => 60,
+        'paddress' => 500, 'daddress' => 500, 'pdate' => 10, 'ptime' => 5, 'ddate' => 10,
+        'pcity' => 120, 'pstate' => 120, 'pcountry' => 120, 'dcity' => 120,
+        'dstate' => 120, 'dcountry' => 120, 'receivername' => 200,
+        'shipmentType' => 40, 'pickupType' => 40, 'content' => 2000
+    ];
+    $tooLong = false;
+    foreach ($fields as $key => $label) {
+        $value = isset($_POST[$key]) && is_string($_POST[$key]) ? trim(strip_tags($_POST[$key])) : '';
+        $value = str_replace(["\r", "\n"], ' ', $value);
+        if (strlen($value) > $maxLengths[$key]) {
+            $tooLong = true;
+        }
+        $values[$key] = $value;
     }
+    $requiredKeys = [
+        'firstname', 'lastname', 'email', 'contactnumber', 'paddress', 'daddress',
+        'pdate', 'ptime', 'ddate', 'pcity', 'pstate', 'dcity', 'dstate',
+        'receivername', 'shipmentType', 'pickupType'
+    ];
+    $missingRequired = false;
+    foreach ($requiredKeys as $key) {
+        if (($values[$key] ?? '') === '') {
+            $missingRequired = true;
+        }
+    }
+    $pickupDate = DateTime::createFromFormat('!Y-m-d', $values['pdate']);
+    $deliveryDate = DateTime::createFromFormat('!Y-m-d', $values['ddate']);
+    $validPickupDate = $pickupDate && $pickupDate->format('Y-m-d') === $values['pdate'];
+    $validDeliveryDate = $deliveryDate && $deliveryDate->format('Y-m-d') === $values['ddate'];
+    $validTime = (bool)preg_match('/^(?:[01]\\d|2[0-3]):[0-5]\\d$/', $values['ptime']);
+    $validShipmentType = in_array($values['shipmentType'], ['Air Freight', 'Marine Freight', 'Land Freight'], true);
+    $validPickupType = in_array($values['pickupType'], ['Bike', 'Van', 'Truck'], true);
+    if ($tooLong) {
+        $quoteStatus = 'One or more fields exceed the allowed length. Please shorten the details and try again.';
+    } elseif ($missingRequired || !filter_var($values['email'], FILTER_VALIDATE_EMAIL)) {
+        $quoteStatus = 'Please complete all required fields and provide a valid email address.';
+    } elseif (!$validPickupDate || !$validDeliveryDate || !$validTime) {
+        $quoteStatus = 'Enter valid pickup and expected delivery dates and a valid pickup time.';
+    } elseif (!$validShipmentType || !$validPickupType) {
+        $quoteStatus = 'Choose a valid shipment type and pickup vehicle.';
+    } elseif ($values['ddate'] < $values['pdate']) {
+        $quoteStatus = 'Expected delivery date cannot be earlier than pickup date.';
+    } else {
+        // Persist the validated request first so it is not lost if shared-host mail is unavailable.
+        try {
+            require_once __DIR__ . '/../database/connection.php';
+            $quoteDb = app_db();
+            $quoteInsert = $quoteDb->prepare('INSERT INTO quote_requests (first_name,last_name,email,contact_number,pickup_address,delivery_address,pickup_date,pickup_time,expected_delivery_date,pickup_city,pickup_state,pickup_country,delivery_city,delivery_state,delivery_country,receiver_name,shipment_type,pickup_type,content) VALUES (:first_name,:last_name,:email,:contact_number,:pickup_address,:delivery_address,:pickup_date,:pickup_time,:expected_delivery_date,:pickup_city,:pickup_state,:pickup_country,:delivery_city,:delivery_state,:delivery_country,:receiver_name,:shipment_type,:pickup_type,:content)');
+            $quoteInsert->execute([
+                ':first_name'=>$values['firstname'], ':last_name'=>$values['lastname'], ':email'=>$values['email'],
+                ':contact_number'=>$values['contactnumber'], ':pickup_address'=>$values['paddress'], ':delivery_address'=>$values['daddress'],
+                ':pickup_date'=>$values['pdate'], ':pickup_time'=>$values['ptime'], ':expected_delivery_date'=>$values['ddate'],
+                ':pickup_city'=>$values['pcity'], ':pickup_state'=>$values['pstate'], ':pickup_country'=>$values['pcountry'],
+                ':delivery_city'=>$values['dcity'], ':delivery_state'=>$values['dstate'], ':delivery_country'=>$values['dcountry'],
+                ':receiver_name'=>$values['receivername'], ':shipment_type'=>$values['shipmentType'], ':pickup_type'=>$values['pickupType'], ':content'=>$values['content']
+            ]);
+        } catch (Throwable $exception) {
+            error_log('Quote request could not be stored: ' . get_class($exception));
+            $quoteStatus = 'We could not save your request right now. Please try again later.';
+        }
+        $recipient = getenv('QUOTE_RECIPIENT_EMAIL') ?: '';
+        $from = getenv('QUOTE_FROM_EMAIL') ?: '';
+        if ($quoteStatus !== '') {
+            // Keep the database error message and avoid reporting success.
+        } elseif (!filter_var($recipient, FILTER_VALIDATE_EMAIL) || !filter_var($from, FILTER_VALIDATE_EMAIL)) {
+            $quoteStatus = 'Your request has been saved, but email notification is not configured. Our team can review it.';
+            error_log('Quote request email is not configured; set QUOTE_RECIPIENT_EMAIL and QUOTE_FROM_EMAIL.');
+        } else {
+            $lines = [];
+            foreach ($fields as $key => $label) {
+                $lines[] = $label . ': ' . ($values[$key] !== '' ? $values[$key] : 'Not provided');
+            }
+            $headers = "From: " . $from . "\r\n" . "Reply-To: " . $values['email'] . "\r\n" . "Content-Type: text/plain; charset=UTF-8";
+            if (mail($recipient, 'NEXTGEN shipping quote request', implode("\n", $lines), $headers)) {
+                $quoteStatus = 'Your quote request was sent successfully. Our team will review the details.';
+            } else {
+                $quoteStatus = 'Your request was saved, but email notification could not be sent. Our team can still review it.';
+                error_log('NEXTGEN quote request email could not be sent.');
+            }
+        }
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) &&
+    (!isset($_POST['csrf_token']) || !is_string($_POST['csrf_token']) ||
+    !hash_equals($_SESSION['quote_csrf_token'], $_POST['csrf_token']))) {
+    $quoteStatus = 'Your session could not be verified. Please reload the page and try again.';
 }
 ?>
 <!DOCTYPE html>
@@ -80,7 +137,7 @@
         <h1>Request a Quote</h1>
       </div>
       <ol class="breadcrumb justify-content-center">
-        <li><a href="#">Home </a></li>
+        <li><a href="../index.php">Home</a></li>
         <li class="active">/ Quote</li>
       </ol>
     </div>
@@ -89,8 +146,10 @@
   <div class="row">
   <div class="col-12 col-md-9">
     <h2>Request a quote!</h2>
+    <?php if ($quoteStatus !== '') : ?><div class="alert alert-info" role="status"><?php echo htmlspecialchars($quoteStatus, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?></div><?php endif; ?>
     <div class="">
-    <form method="POST">
+    <form method="POST" action="quotation.php">
+      <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['quote_csrf_token'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
       <div class="form-row">
         <div class="col-12 col-md-6 mb-3">
           <label for="validationDefault01">First name</label>
@@ -169,9 +228,9 @@
           <input type="text" name ="receivername" class="form-control" id="validationDefault01" placeholder="John Doe" required>
         </div>
         <div class="col-12 col-md-4 mb-3">
-          <label class="mr-sm-2" for="inlineFormCustomSelect">Shipment Type</label>
-          <select class="custom-select mr-sm-2" name ="shipmentType" id="inlineFormCustomSelect">
-            <option selected>Choose...</option>
+          <label class="mr-sm-2" for="shipmentType">Shipment Type</label>
+          <select class="custom-select mr-sm-2" name ="shipmentType" id="shipmentType" required>
+            <option value="" selected disabled>Choose...</option>
             <option value="Air Freight">Air Freight</option>
             <option value="Marine Freight">Shipping</option>
             <option value="Land Freight">Land freight</option>
@@ -179,11 +238,11 @@
         </div>
         <div class="col-12 col-md-4 mb-3">
           <label class="mr-sm-2" for="inlineFormCustomSelect">Pick Up Vehicle Type</label>
-          <select class="custom-select mr-sm-2" name ="pickupType" id="inlineFormCustomSelect">
-            <option selected>Choose...</option>
-            <option value="Air Freight">Bike</option>
-            <option value="Marine Freight">Van</option>
-            <option value="Land Freight">Truck</option>
+          <select class="custom-select mr-sm-2" name ="pickupType" id="pickupVehicleType" required>
+            <option value="" selected disabled>Choose...</option>
+            <option value="Bike">Bike</option>
+            <option value="Van">Van</option>
+            <option value="Truck">Truck</option>
           </select>
         </div>
       </div>

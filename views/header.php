@@ -2,8 +2,8 @@
 	<!--- Navbar --->
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
-			<a class="navbar-brand text-white" href="index.php"><i class="fas fa-lg fa-shipping-fast mr-2"></i>NEXTGEN Logistics</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+			<a class="navbar-brand text-white" href="../index.php"><i class="fas fa-lg fa-shipping-fast mr-2"></i>NEXTGEN Logistics</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span> 
 			</button>
 			<div class="collapse navbar-collapse" id="nvbCollapse">

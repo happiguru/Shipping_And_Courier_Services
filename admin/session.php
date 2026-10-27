@@ -1,18 +1,25 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')) === 'https';
+    session_set_cookie_params(['httponly'=>true,'secure'=>$isHttps,'samesite'=>'Lax','path'=>'/']);
     session_start();
-
-    require_once('../database/config.php');
-    require_once('../controllers/controllers.php');
-
-    $db_login = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
-    $user_check = $_SESSION['username'];
-    $query = "SELECT * FROM admin WHERE username = '$user_check'";
-    $result = mysqli_query($db_login, $query);
-
-    $row = mysqli_fetch_assoc($result);
-    $login_session = $row['username'];
-    if(!isset($login_session)){
-        mysqli_close($db_login);
-        header('Location: index.php');
-    }
-?>
+}
+require_once __DIR__ . '/../database/connection.php';
+if (empty($_SESSION['userId']) || empty($_SESSION['username'])) {
+    header('Location: index.php'); exit();
+}
+try {
+    $stmt = app_db()->prepare('SELECT adminid, username FROM admin WHERE adminid = :id AND username = :username LIMIT 1');
+    $stmt->execute([':id'=>(int)$_SESSION['userId'], ':username'=>(string)$_SESSION['username']]);
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (Throwable $exception) {
+    error_log('Admin session validation failed: '.$exception->getMessage());
+    http_response_code(503); exit('Admin services are temporarily unavailable.');
+}
+if (!$admin) {
+    $_SESSION = [];
+    if (session_status() === PHP_SESSION_ACTIVE) session_destroy();
+    header('Location: index.php'); exit();
+}
+$login_session = $admin['username'];
+if (empty($_SESSION['csrf_token'])) $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
